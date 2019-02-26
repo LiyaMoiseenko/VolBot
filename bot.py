@@ -48,19 +48,27 @@ def get_value(date_all):
 
 #поиск в файле игры с определенным номером
 def search_in_file(nom):
-    f = open('noms.txt', 'r')
-    for line in f:
-        if line.strip()==str(nom):
-            f.close()
-            return False
-    f.close()
-    return True
+    try: 
+        f = open('noms.txt', 'r')
+        for line in f:
+            if line.strip()==str(nom):
+                f.close()
+                return False
+        f.close()
+        return True
+    except Exception:
+        bot.send_message(CHANNEL_NAME, 'Файл не читает')
+    
+    
 
 #добавление в файл номер игры
 def add_in_file(nom):
-    f = open('noms.txt', 'a')
-    f.write(nom + '\n')
-    f.close()
+    try: 
+        f = open('noms.txt', 'a')
+        f.write(nom + '\n')
+        f.close()
+    except Exception:
+        bot.send_message(CHANNEL_NAME, 'В Файл не записывает')
 
 
 @bot.message_handler(commands=['add'])
