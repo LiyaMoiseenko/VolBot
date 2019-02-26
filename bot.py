@@ -14,8 +14,8 @@ def add_answer():
     try: 
         bot.send_message(CHANNEL_NAME, get_all_data(get_html('https://melbet.org/LiveFeed/Get1x2_VZip?sports=6&count=50&mode=4&cyberFlag=2&partner=8')))
     except Exception:
-        # pass
-        bot.send_message(CHANNEL_NAME, 'Нет прогозов')
+        pass
+#         bot.send_message(CHANNEL_NAME, 'Нет прогозов')
 
 
 # получение html кода с страницы
@@ -50,7 +50,7 @@ def get_value(date_all):
 def search_in_file(nom):
     f = open('noms.txt', 'r')
     for line in f:
-        if set(line.split(' '))==set(nom.split(' ')):
+        if line.strip()==str(nom):
             f.close()
             return False
     f.close()
