@@ -1,1 +1,2 @@
 PyTelegramBotAPI
+beautifulsoup4==4.1.3
