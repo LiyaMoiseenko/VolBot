@@ -141,7 +141,7 @@ def add_answer():
         # bot.send_message(message.chat.id, get_all_data(get_html('https://melbet.org/LiveFeed/Get1x2_VZip?sports=6&count=50&mode=4&cyberFlag=2&partner=8')))
         bot.send_message(CHANNEL_NAME, get_all_data(get_html('https://melbet.org/LiveFeed/Get1x2_VZip?sports=6&count=50&mode=4&cyberFlag=2&partner=8')))
     except Exception:
-        pass
+#         pass
         # print('Нет 1200')
         # # bot.send_message(message.chat.id, 'Нет прогозов')
         bot.send_message(CHANNEL_NAME, 'Нет прогозов')
